@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analyseur d&#x27;Interférences Électromagnétiques | Calculateur IEM Rapide</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;700&family=Playfair+Display:wght@700&display=swap');
+        :root {
+            --background-dark: #1a1a1a;
+            --background-light: #2c2c2c;
+            --text-primary: #e0e0e0;
+            --text-secondary: #a0a0a0;
+            --accent-color: #00ffcc;
+            --border-color: #444;
+            --card-background: #252525;
+        }
+        body {
+            font-family: 'IBM Plex Mono', monospace;
+            background: var(--background-dark);
+            color: var(--text-primary);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+            color: var(--text-primary);
+            margin-bottom: 0.5em;
+        }
+        h1 {
+            font-size: 3em;
+            text-align: center;
+            margin-top: 1.5em;
+            letter-spacing: -0.05em;
+            line-height: 1.1;
+        }
+        header {
+            width: 100%;
+            max-width: 1200px;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .hero {
+            text-align: center;
+            padding: 60px 20px;
+            background: linear-gradient(145deg, var(--background-dark) 0%, var(--background-light) 100%);
+            border-bottom: 1px solid var(--border-color);
+            margin-bottom: 40px;
+        }
+        .hero p {
+            font-size: 1.2em;
+            max-width: 800px;
+            margin: 20px auto 40px auto;
+            color: var(--text-secondary);
+        }
+        .container {
+            width: 100%;
+            max-width: 1000px;
+            padding: 0 20px;
+            box-sizing: border-box;
+        }
+        .card {
+            background: var(--card-background);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+        }
+        .card:hover {
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+            transform: translateY(-2px);
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: var(--text-secondary);
+            font-size: 0.9em;
+        }
+        input[type="number"], select {
+            width: calc(100% - 22px);
+            padding: 12px;
+            margin-bottom: 20px;
+            border: 1px solid var(--border-color);
+            background-color: var(--background-dark);
+            color: var(--text-primary);
+            border-radius: 4px;
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 1em;
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+        }
+        input[type="number"]:focus, select:focus {
+            outline: none;
+            border-color: var(--accent-color);
+            box-shadow: 0 0 0 2px rgba(0, 255, 204, 0.2);
+        }
+        button {
+            background-color: var(--accent-color);
+            color: var(--background-dark);
+            padding: 14px 25px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1.1em;
+            font-weight: bold;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            font-family: 'IBM Plex Mono', monospace;
+        }
+        button:hover {
+            background-color: #00e6b8;
+            transform: translateY(-1px);
+        }
+        #tool-result {
+            margin-top: 30px;
+            background: var(--background-dark);
+            border: 1px dashed var(--accent-color);
+            padding: 25px;
+            border-radius: 6px;
+            min-height: 150px;
+            font-size: 0.95em;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            line-height: 1.8;
+        }
+        .result-section h3 {
+            color: var(--accent-color);
+            margin-top: 20px;
+            margin-bottom: 10px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 5px;
+        }
+        .result-item {
+            margin-bottom: 10px;
+        }
+        .result-item strong {
+            color: var(--text-primary);
+            display: inline-block;
+            min-width: 120px;
+        }
+        footer {
+            width: 100%;
+            max-width: 1000px;
+            padding: 40px 20px;
+            text-align: center;
+            color: var(--text-secondary);
+            border-top: 1px solid var(--border-color);
+            margin-top: 60px;
+            font-size: 0.85em;
+        }
+        .seo-section {
+            padding: 40px 20px;
+            background: var(--background-light);
+            border-top: 1px solid var(--border-color);
+            width: 100%;
+            max-width: 1000px;
+            box-sizing: border-box;
+            margin-top: 40px;
+            border-radius: 8px;
+            text-align: left;
+        }
+        .seo-section h2 {
+            color: var(--accent-color);
+            text-align: center;
+            margin-bottom: 25px;
+        }
+        .seo-section p {
+            margin-bottom: 1em;
+            color: var(--text-secondary);
+        }
+        .seo-section ul {
+            list-style: none;
+            padding: 0;
+            margin-top: 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 15px;
+        }
+        .seo-section li {
+            background: var(--background-dark);
+            padding: 15px;
+            border-radius: 5px;
+            border: 1px solid var(--border-color);
+            transition: transform 0.2s;
+        }
+        .seo-section li:hover {
+            transform: translateX(5px);
+        }
+        .seo-section li a {
+            color: var(--accent-color);
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .seo-section li a:hover {
+            text-decoration: underline;
+        }
+    </style>
+    <meta name="description" content="Évaluez le niveau d&#x27;interférences électromagnétiques dans votre environnement. Optimisez la performance des appareils sensibles, qu&#x27;ils soient électroniques, médicaux ou scientifiques. Une précision inégalée pour des mesures fiables.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://analyseur-d-interferences-electromagnetiques-1.onrender.com">
+    <meta property="og:title" content="Analyseur d&#x27;Interférences Électromagnétiques">
+    <meta property="og:description" content="Évaluez le niveau d&#x27;interférences électromagnétiques dans votre environnement. Optimisez la performance des appareils sensibles, qu&#x27;ils soient électroniques, médicaux ou scientifiques. Une précision inégalée pour des mesures fiables.">
+    <meta property="og:url" content="https://analyseur-d-interferences-electromagnetiques-1.onrender.com">
+    <meta property="og:type" content="website">
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Analyseur d'Interférences Électromagnétiques", "description": "Évaluez le niveau d'interférences électromagnétiques dans votre environnement. Optimisez la performance des appareils sensibles, qu'ils soient électroniques, médicaux ou scientifiques. Une précision inégalée pour des mesures fiables.", "url": "https://analyseur-d-interferences-electromagnetiques-1.onrender.com", "applicationCategory": "UtilityApplication", "operatingSystem": "Web Browser"}</script>
+</head>
+<body data-site-slug="analyseur-d-interferences-electromagnetiques-1" data-runtime-mode="generic_calculator">
+    <header>
+        <div class="hero">
+            <h1>Analyseur d'Interférences Électromagnétiques (IEM)</h1>
+            <p>Évaluez le niveau d'interférences électromagnétiques dans votre environnement. Optimisez la performance des appareils sensibles, qu'ils soient électroniques, médicaux ou scientifiques. Une précision inégalée pour des mesures fiables.</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="card">
+            <h2>Calculateur IEM Rapide</h2>
+            <p>Saisissez les paramètres de votre environnement pour obtenir une estimation immédiate des niveaux d'IEM et identifier les risques potentiels.</p>
+            <form id="tool-form">
+                <label for="frequence">Fréquence de la source (MHz) :</label>
+                <input type="number" id="frequence" value="100" min="0.1" max="10000" step="0.1" required>
+
+                <label for="distance">Distance à la source (mètres) :</label>
+                <input type="number" id="distance" value="1" min="0.01" max="1000" step="0.1" required>
+
+                <label for="puissance">Puissance de la source (Watts) :</label>
+                <input type="number" id="puissance" value="10" min="0.001" max="10000" step="0.001" required>
+
+                <label for="environnement">Type d'environnement :</label>
+                <select id="environnement" required>
+                    <option value="ouvert">Espace ouvert (faible atténuation)</option>
+                    <option value="urbain">Environnement urbain (atténuation modérée)</option>
+                    <option value="interieur">Intérieur bâtiment (atténuation significative)</option>
+                    <option value="blindage">Zone blindée (atténuation très forte)</option>
+                </select>
+
+                <button type="submit" id="tool-submit">Analyser les IEM</button>
+            </form>
+
+            <div id="tool-result">
+                <p id="result-detail">Vos résultats d'analyse IEM apparaîtront ici.</p>
+            </div>
+        </section>
+
+        <section class="card">
+            <h2>Pourquoi analyser les IEM ?</h2>
+            <p>Les interférences électromagnétiques peuvent dégrader la performance des équipements, entraîner des erreurs de mesure, et même compromettre la sécurité. Cet outil vous aide à anticiper et à mitiger ces risques dans les secteurs critiques comme la santé, l'industrie et la recherche.</p>
+            <ul>
+                <li><strong>Santé :</strong> Assurer le bon fonctionnement des dispositifs médicaux vitaux.</li>
+                <li><strong>Industrie :</strong> Protéger les systèmes de contrôle et d'automatisation.</li>
+                <li><strong>Recherche :</strong> Garantir l'intégrité des données expérimentales.</li>
+            </ul>
+        </section>
+    </main>
+
+    <div class="seo-section">
+        <h2>Recherche et Optimisation IEM</h2>
+        <p>Vous recherchez des solutions pour les interférences électromagnétiques ? Notre analyseur IEM est conçu pour les professionnels exigeants. Que vous soyez ingénieur électronique, responsable laboratoire, ou technicien biomédical, comprendre et maîtriser l'environnement électromagnétique est crucial.</p>
+        <p>Découvrez comment cet outil peut vous aider à :</p>
+        <ul>
+            <li><a href="#" data-affiliate-slot="iem-detection">Détecter les sources d'interférences</a></li>
+            <li><a href="#" data-affiliate-slot="compatibilite-em">Assurer la compatibilité électromagnétique (CEM)</a></li>
+            <li><a href="#" data-affiliate-slot="optimisation-performance">Optimiser la performance de vos équipements sensibles</a></li>
+            <li><a href="#" data-affiliate-slot="conformite-normes">Respecter les normes IEM et CEM en vigueur</a></li>
+            <li><a href="#" data-affiliate-slot="diagnostic-iem">Effectuer un diagnostic précis des perturbations</a></li>
+            <li><a href="#" data-affiliate-slot="solutions-blindage">Évaluer l'efficacité des solutions de blindage</a></li>
+        </ul>
+        <p>Notre calculateur prend en compte les facteurs clés pour une estimation fiable : fréquence, puissance de la source, distance et caractéristiques de l'environnement (ouverture, urbanisation, intérieur, blindage). Idéal pour la planification et l'audit de vos installations critiques.</p>
+    </div>
+
+    <footer>
+        <p>&copy; 2023 Analyseur IEM. Tous droits réservés. Outil conçu pour les professionnels de l'électronique, de la santé et de la recherche.</p>
+    </footer>
+
+    <script>
+        document.getElementById('tool-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const frequence = parseFloat(document.getElementById('frequence').value); // MHz
+            const distance = parseFloat(document.getElementById('distance').value); // mètres
+            const puissance = parseFloat(document.getElementById('puissance').value); // Watts
+            const environnement = document.getElementById('environnement').value;
+
+            if (isNaN(frequence) || isNaN(distance) || isNaN(puissance) || frequence <= 0 || distance <= 0 || puissance <= 0) {
+                document.getElementById('tool-result').innerHTML = '<p style="color: #ff6666;">Veuillez saisir des valeurs numériques positives valides pour tous les champs.</p>';
+                return;
+            }
+
+            // Constantes et facteurs d'atténuation
+            const c = 3 * Math.pow(10, 8); // Vitesse de la lumière en m/s
+            const Pi = Math.PI;
+
+            // Facteurs d'atténuation environnementale (dB)
+            let attenuationEnvironnementale = 0;
+            let descriptionAtt = "Aucune atténuation spécifique.";
+            switch (environnement) {
+                case 'ouvert':
+                    attenuationEnvironnementale = 0; // Référence, pas d'atténuation supplémentaire
+                    descriptionAtt = "Environnement ouvert : atténuation minimale.";
+                    break;
+                case 'urbain':
+                    attenuationEnvironnementale = 5; // Quelques dB supplémentaires pour les obstacles
+                    descriptionAtt = "Environnement urbain : atténuation modérée due aux obstacles (bâtiments, etc.).";
+                    break;
+                case 'interieur':
+                    attenuationEnvironnementale = 15; // Murs, mobilier, etc.
+                    descriptionAtt = "Intérieur de bâtiment : atténuation significative par les murs et les structures internes.";
+                    break;
+                case 'blindage':
+                    attenuationEnvironnementale = 30; // Pièce blindée, cage de Faraday, etc.
+                    descriptionAtt = "Zone blindée : atténuation très forte due à un blindage spécifique (ex: salle de serveurs, salle d'IRM).";
+                    break;
+            }
+
+            // Calcul du champ électrique (E) en V/m en espace libre (formule simplifiée champ lointain)
+            // P_isotrope = Puissance / (4 * Pi * distance^2) * Gain (pour simplifier, on prend Gain=1)
+            // E = sqrt(Z0 * P_isotrope) où Z0 = 377 Ohm (impédance de l'espace libre)
+            // On peut aussi utiliser la formule E = (sqrt(30 * P)) / distance
+            // Pour être plus proche des références IEM, on peut calculer E = (sqrt(30 * puissance)) / distance
+            // En prenant en compte la fréquence pour la longueur d'onde et un modèle plus complet (mais on garde simple pour un calculette rapide)
+
+            // Simplification pour champ électrique à une certaine distance, en V/m
+            // E = sqrt(30 * P) / d  (Formule pour une antenne isotrope, champ lointain)
+            let champElectrique_V_m = Math.sqrt(30 * puissance) / distance; // V/m
+
+            // Conversion en dBuV/m (1 V/m = 120 dBuV/m)
+            let champElectrique_dBuV_m_initial = 20 * Math.log10(champElectrique_V_m * 1000000); // 1V = 1,000,000 uV
+
+            // Atténuation due à la fréquence (simplifié, peut être plus complexe en réalité)
+            // Plus la fréquence est élevée, plus l'atténuation atmosphérique et par les matériaux est forte.
+            // Estimation très grossière: 0.1 dB/m à 1 GHz
+            let attenuationFrequence = (frequence / 1000) * 0.1 * distance; // en dB, 0.1 dB/m à 1 GHz
+
+            let champElectrique_dBuV_m_attenue = champElectrique_dBuV_m_initial - attenuationEnvironnementale - attenuationFrequence;
+
+            // Niveaux de référence typiques (indicatifs)
+            let niveauReference = "N/A";
+            let interpretation = "Interprétation non disponible pour ces paramètres.";
+
+            if (champElectrique_dBuV_m_attenue < 40) { // Equivalent à environ 10mV/m
+                niveauReference = "Faible";
+                interpretation = "Faible risque d'interférences pour la plupart des équipements. Idéal pour les appareils très sensibles.";
+            } else if (champElectrique_dBuV_m_attenue >= 40 && champElectrique_dBuV_m_attenue < 60) { // Equivalent à environ 10mV/m à 100mV/m
+                niveauReference = "Modéré";
+                interpretation = "Risque modéré d'interférences. Les équipements non blindés ou sensibles pourraient être affectés. Surveillance recommandée.";
+            } else { // >= 60 dBuV/m
+                niveauReference = "Élevé";
+                interpretation = "Risque élevé d'interférences. Forte probabilité de dysfonctionnements pour les équipements sensibles. Des mesures de mitigation (blindage, éloignement) sont fortement conseillées.";
+            }
+
+            let resultHtml = `
+                <div class="result-section">
+                    <h3>Résultats de l'Analyse IEM</h3>
+                    <div class="result-item"><strong>Champ Électrique Estimé :</strong> ${champElectrique_V_m.toFixed(4)} V/m</div>
+                    <div class="result-item"><strong>Niveau d'IEM (dBuV/m) :</strong> ${champElectrique_dBuV_m_attenue.toFixed(2)} dBuV/m</div>
+                    <div class="result-item"><strong>Niveau de Risque :</strong> <span style="color: ${niveauReference === 'Faible' ? '#00cc66' : (niveauReference === 'Modéré' ? '#ffcc00' : '#ff6666')};">${niveauReference}</span></div>
+                    <div class="result-item"><strong>Interprétation :</strong> ${interpretation}</div>
+                </div>
+                <div class="result-section">
+                    <h3>Détails des Paramètres</h3>
+                    <div class="result-item"><strong>Fréquence :</strong> ${frequence} MHz</div>
+                    <div class="result-item"><strong>Distance :</strong> ${distance} mètres</div>
+                    <div class="result-item"><strong>Puissance Source :</strong> ${puissance} Watts</div>
+                    <div class="result-item"><strong>Environnement :</strong> ${environnement.charAt(0).toUpperCase() + environnement.slice(1)}</div>
+                    <div class="result-item"><strong>Atténuation Environnementale :</strong> ${attenuationEnvironnementale} dB</div>
+                    <div class="result-item"><strong>Atténuation Fréquence Estimée :</strong> ${attenuationFrequence.toFixed(2)} dB</div>
+                    <div class="result-item"><strong>Description Atténuation :</strong> ${descriptionAtt}</div>
+                </div>
+            `;
+
+            document.getElementById('tool-result').innerHTML = resultHtml;
+        });
+    </script>
+<div id="qa-smoke-result" hidden></div>
+<script id="farmbuilder-affiliate-helper">
+(function () {
+  window.__UTILITY_AFFILIATE_MAP = window.__UTILITY_AFFILIATE_MAP || {};
+  document.addEventListener("click", function (event) {
+    const target = event.target.closest("[data-affiliate-slot]");
+    if (!target) return;
+    const slot = target.getAttribute("data-affiliate-slot");
+    const href = window.__UTILITY_AFFILIATE_MAP[slot];
+    if (!href) return;
+    if (target.tagName && target.tagName.toLowerCase() === "a") {
+      target.setAttribute("href", href);
+      target.setAttribute("rel", "nofollow sponsored noopener noreferrer");
+      return;
+    }
+    event.preventDefault();
+    window.open(href, "_blank", "noopener");
+  }, true);
+})();
+</script>
+<script id="farmbuilder-functional-qa">
+(function () {
+  function marker() {
+    let node = document.getElementById("qa-smoke-result");
+    if (node) return node;
+    node = document.createElement("div");
+    node.id = "qa-smoke-result";
+    node.hidden = true;
+    document.body.appendChild(node);
+    return node;
+  }
+
+  function normalize(text) {
+    return String(text || "").replace(/\s+/g, " ").trim();
+  }
+
+  function findForm() {
+    return document.getElementById("tool-form") || document.querySelector("form");
+  }
+
+  function findResult() {
+    return (
+      document.getElementById("tool-result") ||
+      document.querySelector("[data-result]") ||
+      document.querySelector(".tool-result, .result-card, .result, .results, .output, .preview, .diagnostic, .analysis")
+    );
+  }
+
+  function resultSignature(node) {
+    if (!node) return "";
+    const text = normalize(node.textContent);
+    const html = normalize(node.innerHTML).slice(0, 600);
+    return `${text}||${html}`;
+  }
+
+  function resultHeadline(node) {
+    if (!node) return "";
+    const heading = node.querySelector("h1, h2, h3, strong, b");
+    return normalize(heading ? heading.textContent : "");
+  }
+
+  function sampleText(field) {
+    const key = `${field.id || ""} ${field.name || ""} ${field.placeholder || ""}`.toLowerCase();
+    if (/email/.test(key)) return "bonjour@example.com";
+    if (/url|site|website|lien/.test(key)) return "https://example.com/offre-solaire";
+    if (/phone|tel|mobile/.test(key)) return "0612345678";
+    if (/ville|city|localisation|location|region|departement|postal/.test(key)) return "Paris";
+    if (/orientation/.test(key)) return "sud";
+    if (/keyword|theme|topic|sujet|subject/.test(key)) return "energie solaire domestique";
+    if (/titre|title/.test(key)) return "Simulateur solaire maison";
+    if (/nom|name|project/.test(key)) return "Projet Horizon";
+    if (/description|notes|content|message/.test(key)) return "Maison individuelle exposee sud avec toiture exploitable.";
+    return field.placeholder || "France";
+  }
+
+  function sampleNumber(field) {
+    const key = `${field.id || ""} ${field.name || ""}`.toLowerCase();
+    if (/inclinaison|angle|slope/.test(key)) return "30";
+    if (/surface|size|m2|sqm/.test(key)) return "28";
+    if (/annee|year/.test(key)) return "2024";
+    if (/prix|price|budget|cost|amount|montant/.test(key)) return "12000";
+    const min = Number(field.min || "");
+    const max = Number(field.max || "");
+    if (Number.isFinite(min) && Number.isFinite(max) && max >= min) {
+      return String(Math.min(max, Math.max(min, min + Math.round((max - min) * 0.35))));
+    }
+    if (Number.isFinite(min)) return String(Math.max(min, 12));
+    if (Number.isFinite(max)) return String(Math.min(max, 12));
+    return field.value || "12";
+  }
+
+  function applySample(field) {
+    const tag = (field.tagName || "").toLowerCase();
+    const type = (field.type || "").toLowerCase();
+    if (field.disabled) return;
+    if (tag === "select") {
+      const option = Array.from(field.options || []).find((item) => item.value && !item.disabled) || field.options[0];
+      if (option) field.value = option.value;
+      return;
+    }
+    if (type === "checkbox") {
+      field.checked = true;
+      return;
+    }
+    if (type === "radio") {
+      field.checked = true;
+      return;
+    }
+    if (type === "date") {
+      field.value = "2026-03-01";
+      return;
+    }
+    if (type === "email") {
+      field.value = "bonjour@example.com";
+      return;
+    }
+    if (type === "url") {
+      field.value = "https://example.com/offre-solaire";
+      return;
+    }
+    if (type === "tel") {
+      field.value = "0612345678";
+      return;
+    }
+    if (type === "color") {
+      field.value = "#2f855a";
+      return;
+    }
+    if (type === "number" || type === "range") {
+      field.value = sampleNumber(field);
+      return;
+    }
+    field.value = sampleText(field);
+  }
+
+  function stamp(status, detail, headline, primary) {
+    const node = marker();
+    node.dataset.status = status;
+    node.dataset.mode = "native-form";
+    node.dataset.detail = detail || "";
+    node.dataset.headline = headline || "";
+    node.dataset.primary = primary || "";
+    node.dataset.viewport = window.innerWidth <= 640 ? "mobile" : "desktop";
+  }
+
+  function inspectResult(before, attemptsLeft) {
+    const result = findResult();
+    if (!result) {
+      stamp("fail", "La zone de resultat est introuvable.", "");
+      return;
+    }
+    const after = resultSignature(result);
+    const text = normalize(result.textContent);
+    if (after && after !== before && text.length >= 24) {
+      const primary = result.querySelector("a[href], button[data-href], [data-primary-url]") || document.querySelector("#tool-result a[href]");
+      stamp("pass", "Le formulaire natif a mis a jour la zone de resultat.", resultHeadline(result), primary ? (primary.getAttribute("href") || primary.getAttribute("data-primary-url") || "") : "");
+      return;
+    }
+    if (attemptsLeft > 0) {
+      window.setTimeout(function () {
+        inspectResult(before, attemptsLeft - 1);
+      }, 250);
+      return;
+    }
+    stamp("fail", "La zone de resultat n'a pas renvoye de contenu exploitable.", resultHeadline(result));
+  }
+
+  function runSmoke() {
+    const params = new URLSearchParams(window.location.search);
+    if (params.get("__qa") !== "functional") return;
+    const form = findForm();
+    if (!form) {
+      stamp("fail", "Le formulaire principal est introuvable.", "");
+      return;
+    }
+    const result = findResult();
+    const before = resultSignature(result);
+    form.querySelectorAll("input, select, textarea").forEach(applySample);
+    const blocker = function (event) {
+      event.preventDefault();
+    };
+    form.addEventListener("submit", blocker, { capture: true, once: true });
+    form.dispatchEvent(new Event("submit", { bubbles: true, cancelable: true }));
+    inspectResult(before, 6);
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", function () {
+      window.setTimeout(runSmoke, 60);
+    }, { once: true });
+  } else {
+    window.setTimeout(runSmoke, 60);
+  }
+})();
+</script>
+</body>
+</html>
