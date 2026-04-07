@@ -1,5 +1,5 @@
 {
-  "run_id": "run-1775523509154",
+  "run_id": "run-1775554338659",
   "job_index": 1,
   "params": {
     "owner_user_id": "user-1774822953462",
@@ -7,15 +7,15 @@
     "owner_display_name": "Administrator",
     "count": 1,
     "archetype": "calculator",
-    "market": "Growth republish",
+    "market": "Évaluez le niveau d'interférences électromagnétiques dans votre environnement.…",
     "language": "fr",
     "country": "FR",
-    "brief": "Évaluez le niveau d'interférences électromagnétiques dans votre environnement. Optimisez la performance des appareils sensibles, qu'ils soient électroniques, médicaux ou scientifiques. Une précision inégalée pour des me…",
+    "brief": "Évaluez le niveau d'interférences électromagnétiques dans votre environnement. Optimisez la performance des appareils sensibles, qu'ils soient électroniques, médicaux ou scientifiques. Une…",
     "notes": "Growth module republish of an updated local artifact.",
     "import_notes": "Growth module republish of an updated local artifact.",
-    "growth_job_id": "growth-1775523363859",
+    "growth_job_id": "growth-1775554111171",
     "growth_slug": "analyseur-d-interferences-electromagnetiques-1",
-    "growth_kind": "affiliate",
+    "growth_kind": "content",
     "mode": "production",
     "run_kind": "import_deploy",
     "publish_target": "render",
@@ -39,19 +39,19 @@
     "forced_slug": "analyseur-d-interferences-electromagnetiques-1",
     "site_idea_title": "Analyseur d'Interférences Électromagnétiques",
     "site_idea_summary": "Évaluez le niveau d'interférences électromagnétiques dans votre environnement. Optimisez la performance des appareils sensibles, qu'ils soient électroniques, médicaux ou scientifiques. Une…",
-    "import_source_path": "/var/lib/utility-site-studio/data/growth-republish/growth-1775523363859/analyseur-d-interferences-electromagnetiques-1",
-    "import_root_path": "/var/lib/utility-site-studio/data/growth-republish/growth-1775523363859/analyseur-d-interferences-electromagnetiques-1",
+    "import_source_path": "/var/lib/utility-site-studio/data/growth-republish/growth-1775554111171/analyseur-d-interferences-electromagnetiques-1",
+    "import_root_path": "/var/lib/utility-site-studio/data/growth-republish/growth-1775554111171/analyseur-d-interferences-electromagnetiques-1",
     "import_analysis_model": "preserved-analysis"
   },
   "import_analysis": {
     "title": "Analyseur d'Interférences Électromagnétiques",
     "description": "Évaluez le niveau d'interférences électromagnétiques dans votre environnement. Optimisez la performance des appareils sensibles, qu'ils soient électroniques, médicaux ou scientifiques. Une…",
-    "summary": "Évaluez le niveau d'interférences électromagnétiques dans votre environnement. Optimisez la performance des appareils sensibles, qu'ils soient électroniques, médicaux ou scientifiques. Une précision inégalée pour des me…",
+    "summary": "Évaluez le niveau d'interférences électromagnétiques dans votre environnement. Optimisez la performance des appareils sensibles, qu'ils soient électroniques, médicaux ou scientifiques. Une…",
     "notes": "Growth module republish of an updated local artifact.",
     "archetype": "calculator",
     "language": "fr",
     "country": "FR",
-    "market": "Growth republish",
+    "market": "Évaluez le niveau d'interférences électromagnétiques dans votre environnement.…",
     "characteristics": [
       "imported static site",
       "ready file deploy",
@@ -59,6 +59,6 @@
     ],
     "suggested_slug": "analyseur-d-interferences-electromagnetiques-1"
   },
-  "source_path": "/var/lib/utility-site-studio/data/growth-republish/growth-1775523363859/analyseur-d-interferences-electromagnetiques-1",
-  "deploy_root": "/var/lib/utility-site-studio/data/growth-republish/growth-1775523363859/analyseur-d-interferences-electromagnetiques-1"
+  "source_path": "/var/lib/utility-site-studio/data/growth-republish/growth-1775554111171/analyseur-d-interferences-electromagnetiques-1",
+  "deploy_root": "/var/lib/utility-site-studio/data/growth-republish/growth-1775554111171/analyseur-d-interferences-electromagnetiques-1"
 }
