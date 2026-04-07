@@ -1,23 +1,38 @@
 {
+  "slug": "analyseur-d-interferences-electromagnetiques-1",
   "name": "Analyseur d'Interférences Électromagnétiques",
-  "description": "Évaluez le niveau d'interférences électromagnétiques dans votre environnement. Optimisez la performance des appareils sensibles, qu'ils soient électroniques, médicaux ou scientifiques. Une précision inégalée pour des mesures fiables.",
+  "description": "Évaluez le niveau d'interférences électromagnétiques dans votre environnement. Optimisez la performance des appareils sensibles, qu'ils soient électroniques, médicaux ou scientifiques. Une…",
   "theme": "calculator",
-  "design_theme": "mono-terminal",
-  "structure_preset": "metric-grid",
-  "render_direction": "atlas-report",
-  "page_blueprint": "dossier-rail",
+  "design_theme": "imported-source",
+  "structure_preset": "external-source",
+  "render_direction": "imported-source",
+  "page_blueprint": "imported-source",
   "language": "fr",
   "country": "FR",
   "url": null,
   "expected_url": "https://analyseur-d-interferences-electromagnetiques-1.onrender.com",
-  "created": "2026-04-01T20:59:44.462227+00:00",
+  "created": "2026-04-07T00:59:09.597454+00:00",
   "owner_user_id": "user-1774822953462",
   "owner_username": "admin",
   "owner_display_name": "Administrator",
   "status": "generated",
-  "run_id": "run-1775077159341",
+  "run_id": "run-1775523509154",
   "publish_target": "render",
   "mode": "production",
+  "source_type": "imported",
+  "import_source_path": "/var/lib/utility-site-studio/data/growth-republish/growth-1775523363859/analyseur-d-interferences-electromagnetiques-1",
+  "import_root_path": "/var/lib/utility-site-studio/data/growth-republish/growth-1775523363859/analyseur-d-interferences-electromagnetiques-1",
+  "import_resolution_note": null,
+  "analysis": {
+    "model": "preserved-analysis",
+    "summary": "Évaluez le niveau d'interférences électromagnétiques dans votre environnement. Optimisez la performance des appareils sensibles, qu'ils soient électroniques, médicaux ou scientifiques. Une précision inégalée pour des me…",
+    "notes": "Growth module republish of an updated local artifact.",
+    "characteristics": [
+      "imported static site",
+      "ready file deploy",
+      "calculator"
+    ]
+  },
   "github": {
     "status": "pending"
   },
@@ -28,13 +43,258 @@
     "status": "pending"
   },
   "features": [
-    "Hero pattern: command",
-    "Proof module: metrics",
-    "Design theme: Mono Terminal",
-    "Render direction: Atlas Report",
-    "Page blueprint: Dossier Rail",
-    "Runtime mode: generic_calculator",
-    "Generation mode: direct_html",
-    "Artifact rendered, awaiting QA and deployment"
-  ]
+    "Imported from ready static files",
+    "AI analysis model: preserved-analysis",
+    "imported static site",
+    "ready file deploy",
+    "calculator"
+  ],
+  "growth": {
+    "affiliate": {
+      "status": "ready",
+      "updated_at": "2026-04-07T00:57:11.109045+00:00",
+      "modes": [
+        "anchor_text"
+      ],
+      "links": 1,
+      "insertions": 1,
+      "review": {
+        "status": "pass",
+        "score": 84,
+        "summary": "A safer anchor-text fallback was applied as a compact contextual block near the bottom of the page.",
+        "issues": []
+      }
+    }
+  },
+  "ahrefs": {
+    "detail_status": "ready",
+    "details": {
+      "status": "ready",
+      "synced_at": "2026-04-01T21:18:16.693642+00:00",
+      "target_host": "analyseur-d-interferences.onrender.com",
+      "country": "FR",
+      "top_pages": [],
+      "organic_keywords": [],
+      "organic_competitors": [],
+      "refdomains": [],
+      "metrics_by_country": [],
+      "refdomains_totals": {
+        "new_links": 0,
+        "lost_links": 0,
+        "spammy_domains": 0
+      }
+    },
+    "detail_synced_at": "2026-04-01T21:18:16.693642+00:00",
+    "shared_host": true,
+    "metrics_scope": "shared-host",
+    "shared_host_provider": "Render",
+    "shared_host_note": "Сайт живёт на Render shared host (analyseur-d-interferences.onrender.com). DR и Ahrefs Rank в таком режиме частично отражают силу хост-домена, поэтому смотри в первую очередь на keywords, ref domains, traffic и top pages.",
+    "opportunity_score": 0,
+    "opportunity_band": "dormant",
+    "opportunity_label": "Dormant",
+    "opportunity_detail": "Ahrefs пока почти не видит самостоятельных SEO-сигналов у этого проекта. · shared-host: DR/AR смотри осторожно.",
+    "status": "ready",
+    "synced_at": "2026-04-05T22:58:28.100345+00:00",
+    "country": "FR",
+    "target_url": "https://analyseur-d-interferences.onrender.com/",
+    "target_host": "analyseur-d-interferences.onrender.com",
+    "current_live_url": "https://analyseur-d-interferences.onrender.com",
+    "domain_rating": 89.0,
+    "ahrefs_rank": 2204,
+    "backlinks": 0,
+    "refdomains": 0,
+    "org_traffic": 0,
+    "org_keywords": 0,
+    "org_keywords_1_3": 0,
+    "org_keywords_4_10": 0,
+    "org_keywords_11_20": 0,
+    "org_keywords_21_50": 0,
+    "org_keywords_51_plus": 0,
+    "top_country": null,
+    "top_country_traffic": null,
+    "detail": "Ahrefs metrics synced via Batch Analysis."
+  },
+  "previous_live_state": {
+    "url": "https://analyseur-d-interferences.onrender.com",
+    "expected_url": "https://analyseur-d-interferences.onrender.com",
+    "requested_url": "https://analyseur-d-interferences.onrender.com",
+    "github": {
+      "status": "published",
+      "repo_name": "analyseur-d-interferences-electromagnetiques-1",
+      "repo_url": "https://github.com/olivkovyi/analyseur-d-interferences-electromagnetiques-1",
+      "updated_at": 1775077210
+    },
+    "deployment": {
+      "status": "ready",
+      "provider": "render",
+      "service_id": "srv-d76ofapr0fns739097ag",
+      "project_name": "analyseur-d-interferences-electromagnetiques-1",
+      "requested_project_name": null,
+      "deployment_id": "dep-d76ofb9r0fns739097i0",
+      "deployment_url": "https://analyseur-d-interferences.onrender.com",
+      "public_url": "https://analyseur-d-interferences.onrender.com",
+      "expected_public_url": "https://analyseur-d-interferences.onrender.com",
+      "dashboard_url": "https://dashboard.render.com/static/srv-d76ofapr0fns739097ag",
+      "ready_state": "live",
+      "target": "production",
+      "updated_at": 1775077264,
+      "url_source": "alias",
+      "requested_public_url": "https://analyseur-d-interferences.onrender.com"
+    },
+    "qa": {
+      "status": "pass",
+      "local": {
+        "status": "pass",
+        "checks": [
+          {
+            "name": "index_exists",
+            "status": "pass",
+            "detail": "index.html exists"
+          },
+          {
+            "name": "meta_exists",
+            "status": "pass",
+            "detail": "meta.json exists"
+          },
+          {
+            "name": "robots_exists",
+            "status": "pass",
+            "detail": "robots.txt exists"
+          },
+          {
+            "name": "has_title",
+            "status": "pass",
+            "detail": "HTML contains a title tag"
+          },
+          {
+            "name": "has_viewport",
+            "status": "pass",
+            "detail": "HTML contains a mobile viewport meta tag"
+          },
+          {
+            "name": "has_canonical",
+            "status": "pass",
+            "detail": "HTML contains a canonical URL"
+          },
+          {
+            "name": "bundle_size",
+            "status": "pass",
+            "detail": "Generated HTML stays below 250KB"
+          },
+          {
+            "name": "functional_qa_hook",
+            "status": "pass",
+            "detail": "Generated HTML includes the browser QA hook used before deploy."
+          },
+          {
+            "name": "inline_script_syntax",
+            "status": "pass",
+            "detail": "Inline JavaScript syntax check passed."
+          },
+          {
+            "name": "robots_google_only",
+            "status": "pass",
+            "detail": "robots.txt allows only Google crawlers and blocks all other bots."
+          },
+          {
+            "name": "no_meta_noindex",
+            "status": "pass",
+            "detail": "Generated HTML does not inject a noindex robots meta tag."
+          },
+          {
+            "name": "no_internal_branding",
+            "status": "pass",
+            "detail": "Generated site does not leak internal platform branding or internal product naming."
+          },
+          {
+            "name": "desktop_layout_overlap",
+            "status": "pass",
+            "detail": "Editorial desktop layout avoids negative overlap offsets on the tool panel"
+          }
+        ],
+        "checked_at": 1775523446
+      },
+      "functional": {
+        "status": "pass",
+        "detail": "desktop: Le formulaire natif a mis a jour la zone de resultat. | mobile: Le formulaire natif a mis a jour la zone de resultat.",
+        "target_url": "http://127.0.0.1:39481/index.html?__qa=functional",
+        "mode": "native-form",
+        "headline": "Résultats de l'Analyse IEM",
+        "primary_url": "",
+        "desktop": {
+          "status": "pass",
+          "detail": "Le formulaire natif a mis a jour la zone de resultat.",
+          "target_url": "http://127.0.0.1:39481/index.html?__qa=functional",
+          "viewport": "desktop",
+          "mode": "native-form",
+          "headline": "Résultats de l'Analyse IEM",
+          "primary_url": "",
+          "reported_viewport": "desktop",
+          "updated_at": 1775523447
+        },
+        "mobile": {
+          "status": "pass",
+          "detail": "Le formulaire natif a mis a jour la zone de resultat.",
+          "target_url": "http://127.0.0.1:39481/index.html?__qa=functional",
+          "viewport": "mobile",
+          "mode": "native-form",
+          "headline": "Résultats de l'Analyse IEM",
+          "primary_url": "",
+          "reported_viewport": "mobile",
+          "updated_at": 1775523448
+        },
+        "updated_at": 1775523448
+      },
+      "remote": {
+        "status": "pass",
+        "checks": [
+          {
+            "name": "remote_200",
+            "status": "pass",
+            "detail": "Remote deployment returned HTTP 200"
+          },
+          {
+            "name": "remote_title",
+            "status": "pass",
+            "detail": "Remote HTML contains a title tag"
+          },
+          {
+            "name": "remote_body",
+            "status": "pass",
+            "detail": "Remote HTML contains a body tag"
+          }
+        ],
+        "checked_at": 1775523448
+      },
+      "visual": {
+        "status": "pass",
+        "desktop": {
+          "status": "pass",
+          "path": "/var/lib/utility-site-studio/static/generated-qa/analyseur-d-interferences-electromagnetiques-1/analyseur-d-interferences-electromagnetiques-1-desktop.png",
+          "detail": "1440x960 screenshot captured.",
+          "relative_url": "/static/generated-qa/analyseur-d-interferences-electromagnetiques-1/analyseur-d-interferences-electromagnetiques-1-desktop.png"
+        },
+        "mobile": {
+          "status": "pass",
+          "path": "/var/lib/utility-site-studio/static/generated-qa/analyseur-d-interferences-electromagnetiques-1/analyseur-d-interferences-electromagnetiques-1-mobile.png",
+          "detail": "430x932 screenshot captured.",
+          "relative_url": "/static/generated-qa/analyseur-d-interferences-electromagnetiques-1/analyseur-d-interferences-electromagnetiques-1-mobile.png"
+        },
+        "updated_at": 1775523466
+      },
+      "lighthouse": {
+        "status": "pass",
+        "scores": {
+          "performance": 88,
+          "accessibility": 100,
+          "best-practices": 96,
+          "seo": 100
+        },
+        "report_path": "/var/lib/utility-site-studio/data/qa/lighthouse/analyseur-d-interferences-electromagnetiques-1-lighthouse.json",
+        "updated_at": 1775523498
+      },
+      "qa_live_url": "https://analyseur-d-interferences.onrender.com",
+      "updated_at": "2026-04-07T00:58:18.834367+00:00"
+    }
+  }
 }
