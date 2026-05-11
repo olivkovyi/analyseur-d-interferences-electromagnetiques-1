@@ -37,7 +37,7 @@
     "status": "published",
     "repo_name": "analyseur-d-interferences-electromagnetiques-1",
     "repo_url": "https://github.com/olivkovyi/analyseur-d-interferences-electromagnetiques-1",
-    "updated_at": 1778528675
+    "updated_at": 1778528905
   },
   "deployment": {
     "status": "ready",
@@ -45,14 +45,14 @@
     "service_id": "srv-d76ofapr0fns739097ag",
     "project_name": "analyseur-d-interferences-electromagnetiques-1",
     "requested_project_name": null,
-    "deployment_id": "dep-d813449o3t8c73e9eiqg",
+    "deployment_id": "dep-d8135tosfn5c739ugv8g",
     "deployment_url": "https://analyseur-d-interferences.onrender.com",
     "public_url": "https://analyseur-d-interferences.onrender.com",
     "expected_public_url": "https://analyseur-d-interferences.onrender.com",
     "dashboard_url": "https://dashboard.render.com/static/srv-d76ofapr0fns739097ag",
     "ready_state": "live",
     "target": "production",
-    "updated_at": 1778528709
+    "updated_at": 1778528919
   },
   "qa": {
     "status": "pass",
@@ -318,6 +318,6 @@
     "detail": "Ahrefs metrics synced via Batch Analysis."
   },
   "requested_url": "https://analyseur-d-interferences.onrender.com",
-  "updated": "2026-05-11T19:45:09.511528+00:00",
-  "open_links_republished_at": "2026-05-11T19:45:09.511547+00:00"
+  "updated": "2026-05-11T19:48:39.311261+00:00",
+  "open_links_republished_at": "2026-05-11T19:48:39.311286+00:00"
 }
